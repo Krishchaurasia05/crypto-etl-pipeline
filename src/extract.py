@@ -23,7 +23,15 @@ coingecko_url = 'https://api.coingecko.com/api/v3/coins/markets'
 api_key = os.getenv('COINGECKO_API_KEY')
 
 def get_coin_data():
-    
+    """
+    Fetches market data for the top 5,000 cryptocurrencies from the CoinGecko,
+    paginated across 20 pages of 250 coins each.
+
+    Returns:
+        list[dict]: A flat list of coin data dictionaries, one per coin.
+        If a specific page fails to fetch, it is skipped and logged;
+        the function still returns all successfully retrieved coins.
+    """
     all_coins = []
     for page in range(1,21):
         parameters ={ 
