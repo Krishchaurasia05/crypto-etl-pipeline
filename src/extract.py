@@ -1,3 +1,4 @@
+
 import requests
 import time 
 import os
@@ -10,7 +11,9 @@ api_key = os.getenv('COINGECKO_API_KEY')
 def get_coin_data():
     '''
     Getting the coins data from CoinGecko
-    250 per page
+    250 per page 
+    Total Number of pages - 20 
+    Total coins - 5000
     '''
     all_coins = []
     for page in range(1,21):
