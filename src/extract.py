@@ -51,4 +51,3 @@ def get_coin_data():
         time.sleep(1)
     return all_coins
 
-print(get_coin_data())
