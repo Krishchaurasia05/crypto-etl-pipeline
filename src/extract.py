@@ -50,3 +50,5 @@ def get_coin_data():
             continue
         time.sleep(1)
     return all_coins
+
+print(get_coin_data())
