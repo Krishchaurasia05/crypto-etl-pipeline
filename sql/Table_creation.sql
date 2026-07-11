@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS fact_coin_price_snapshot(
   total_trading_volume FLOAT NOT NULL,
   high_24 FLOAT NOT NULL,
   low_24 FLOAT NOT NULL,
-  percent_change_24h FLOAT NOT NULL,
+  price_percent_change_24h FLOAT NOT NULL,
   all_time_high FLOAT NOT NULL,
   saved_date_time TIMESTAMP NOT NULL DEFAULT NOW(),
   circulating_supply FLOAT NOT NULL,
