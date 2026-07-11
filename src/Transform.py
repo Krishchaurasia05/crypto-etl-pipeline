@@ -57,7 +57,7 @@ rename_columns = {
     'low_24h': 'low_24',
     'last_updated': 'coin_price_time',
     'price_change_percentage_24h':'price_percent_change_24h',
-    'total_volume':'toal_trading_volume'
+    'total_volume':'total_trading_volume'
 }
 
 usefull_data.rename(columns=rename_columns,inplace=True)
