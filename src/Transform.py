@@ -10,7 +10,7 @@ def transform_raw_data(raw_data):
     ===================================================================================================
     '''
 
-    raw_data = pd.DataFrame(raw_data)
+    full_raw_data = pd.DataFrame(raw_data)
 
     '''
     ===================================================================================================
@@ -23,7 +23,7 @@ def transform_raw_data(raw_data):
                     'market_cap_change_percentage_24h','circulating_supply','ath','last_updated',
                     'total_volume']
 
-    usefull_data = raw_data[filetr_columns].copy()
+    usefull_data = full_raw_data[filetr_columns].copy()
 
     '''
     ===================================================================================================
