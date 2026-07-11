@@ -62,6 +62,14 @@ usefull_data.rename(columns=rename_columns,inplace=True)
 
 '''
 ===================================================================================================
+    Changing Data type
+===================================================================================================
+'''
+usefull_data['coin_price_time'] = pd.to_datetime(usefull_data['coin_price_time'])
+usefull_data['coin_price_time'] = usefull_data['coin_price_time'].dt.tz_localize(None)
+
+'''
+===================================================================================================
     Handling Null values 
 ===================================================================================================
 '''
@@ -69,5 +77,10 @@ usefull_data.rename(columns=rename_columns,inplace=True)
 missing_values_columns = ['high_24','low_24','price_change_24h','price_change_percentage_24h',
                           'market_cap_change_24h','market_cap_change_percentage_24h']
 
+missing_value_count = usefull_data[missing_values_columns].isnull().any(axis=1).sum()
+
 usefull_data = usefull_data.dropna(subset=missing_values_columns)
+
+print(f'Dropping {missing_value_count} rows due to 24h missing data')
+print(f"Remaining rows: {len(usefull_data)}")
 
