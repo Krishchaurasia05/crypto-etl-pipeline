@@ -37,7 +37,7 @@ data = pd.DataFrame(data)
 filetr_columns = ['id','symbol','name','current_price','market_cap','market_cap_rank','high_24h',
                   'low_24h','price_change_24h','price_change_percentage_24h','market_cap_change_24h',
                   'market_cap_change_percentage_24h','circulating_supply','ath','last_updated',
-                  'total_supply']
+                  'total_volume']
 
 usefull_data = data[filetr_columns].copy()
 
@@ -57,7 +57,7 @@ rename_columns = {
     'low_24h': 'low_24',
     'last_updated': 'coin_price_time',
     'price_change_percentage_24h':'price_percent_change_24h',
-    'total_supply':'total_trading_volume'
+    'total_volume':'toal_trading_volume'
 }
 
 usefull_data.rename(columns=rename_columns,inplace=True)
