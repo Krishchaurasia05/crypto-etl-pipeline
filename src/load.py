@@ -57,7 +57,6 @@ def load_data(dim_coins, fact_coin_price_snapshot ):
             conn.commit()
             print("Data insertes in fact_coin_price_snapshot Successfully")
             cur.close()
-            conn.close()
 
 
         except Exception as e:
