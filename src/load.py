@@ -25,6 +25,7 @@ def load_data(dim_coins, fact_coin_price_snapshot ):
             conn.commit()
             cur.close()
             print('Data inserted in dim_coins successfully')
+            
         except Exception as e:
             print(f"Error inserting data: {e}")
             conn.rollback()
@@ -62,10 +63,11 @@ def load_data(dim_coins, fact_coin_price_snapshot ):
         except Exception as e:
             print(f"Error inserting data: {e}")
             conn.rollback()
-        
+        conn.close()
         print('Data inserted successfully')
 
     except Exception as e:
         print(f'Error While connecting Database {e}')
+
 
     return 
