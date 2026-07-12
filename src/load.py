@@ -1,10 +1,48 @@
+"""
+Description--
+
+Handles loading transformed data into the PostgreSQL database (Neon) for
+the Crypto ETL Pipeline.
+
+Responsible for:
+- Connecting securely to PostgreSQL using credentials from environment
+  variables
+- Inserting coin metadata into dim_coins and price snapshots into
+  fact_coin_price_snapshot
+- Preventing duplicate data on repeated runs using ON CONFLICT DO NOTHING
+- Rolling back cleanly if either insert fails, without affecting
+  already-committed data
+
+This module does not fetch or clean data — it assumes it has already been
+prepared correctly by extract.py and transform.py.
+"""
+
+
 import psycopg2 
 import os
 import sys
 import dotenv
 
 def load_data(dim_coins, fact_coin_price_snapshot ):
+    '''
+    Loads cleaned coin data into the PostgreSQL database.
 
+    Inserts rows into dim_coins and fact_coin_price_snapshot using a single
+    shared connection. Each table's insert is committed independently, so a
+    failure in one does not roll back data already committed for the other.
+    Duplicate coins or duplicate price snapshots (same coin_id and
+    coin_price_time) are silently skipped rather than raised as errors.
+
+    Args:
+        dim_coins (pd.DataFrame): Coin metadata — coin_id, coin_symbol,
+            coin_name.
+        fact_coin_price_snapshot (pd.DataFrame): Price/market snapshot data,
+            including coin_id and coin_price_time.
+
+    Returns:
+        None. Prints status messages indicating success or failure for
+        each stage (connection, dim_coins insert, fact table insert).
+    '''
     dotenv.load_dotenv()
 
     db_host = os.getenv('DB_HOST')
