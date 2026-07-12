@@ -1,9 +1,45 @@
+"""
+Description --
+
+Handles data transformation for the Crypto ETL Pipeline.
+
+Responsible for:
+- Cleaning raw CoinGecko API data (selecting relevant fields, dropping
+  incomplete rows, fixing data types)
+- Renaming fields to match the PostgreSQL database schema
+- Splitting cleaned data into two structures: dim_coins (coin metadata)
+  and fact_coin_price_snapshot (time-series price/market data)
+
+This module does not call the API or interact with the database directly.
+See extract.py for data retrieval and load.py for database insertion.
+"""
+
+
+
 import pandas as pd
 import os
 import json
 
 def transform_raw_data(raw_data):
+    """
+    Cleans and reshapes raw coin market data into two schema-ready DataFrames.
 
+    Steps performed:
+    - Selects only the fields required by the database schema
+    - Renames fields to match column names in dim_coins and
+      fact_coin_price_snapshot
+    - Converts coin_price_time to a timezone-naive datetime
+    - Drops rows with missing 24h market data (logged, not silently discarded)
+    - Splits the cleaned data into coin metadata vs. price snapshot data
+
+    Args:
+        raw_data (list[dict]): Raw coin data, as returned by
+            extract.get_coin_data().
+
+    Returns:
+        tuple[pd.DataFrame, pd.DataFrame]: (dim_coins, fact_coin_price_snapshot)
+    """
+    
     '''
     ===================================================================================================
         Converting it into Dataframe to transform
