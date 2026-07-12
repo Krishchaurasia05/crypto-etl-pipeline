@@ -68,5 +68,4 @@ def load_data(dim_coins, fact_coin_price_snapshot ):
     except Exception as e:
         print(f'Error While connecting Database {e}')
 
-
     return 
