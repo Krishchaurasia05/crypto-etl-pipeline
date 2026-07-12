@@ -1,13 +1,13 @@
 CREATE TABLE IF NOT EXISTS dim_coins(
-  coin_id VARCHAR(50) PRIMARY KEY,
-  coin_symbol VARCHAR(50) NOT NULL,
-  coin_name VARCHAR(50) NOT NULL,
+  coin_id VARCHAR(225) PRIMARY KEY,
+  coin_symbol VARCHAR(225) NOT NULL,
+  coin_name VARCHAR(225) NOT NULL,
   coin_adding_date TIMESTAMP NOT NULL DEFAULT NOW()
   );
 
 CREATE TABLE IF NOT EXISTS fact_coin_price_snapshot(
   cp_id SERIAL PRIMARY KEY,
-  coin_id VARCHAR(50) NOT NULL REFERENCES dim_coins(coin_id),
+  coin_id VARCHAR(225) NOT NULL REFERENCES dim_coins(coin_id),
   coin_price_time TIMESTAMP NOT NULL,
   current_price FLOAT NOT NULL,
   market_cap FLOAT NOT NULL,
