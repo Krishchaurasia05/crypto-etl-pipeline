@@ -1,16 +1,9 @@
 import psycopg2 
-import json
 import os
 import sys
-import pandas as pd
 import dotenv
-from Transform import transform_raw_data
-from extract import get_coin_data
 
-def load_data():
-
-    data = get_coin_data()
-    dim_coins, fact_coin_price_snapshot = transform_raw_data(data)
+def load_data(dim_coins, fact_coin_price_snapshot ):
 
     dotenv.load_dotenv()
 
