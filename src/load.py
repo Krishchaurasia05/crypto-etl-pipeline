@@ -12,13 +12,18 @@ def load_data(dim_coins, fact_coin_price_snapshot ):
     db_password = os.getenv('DB_PASSWORD')
     db_user = os.getenv('DB_USER')
 
-    conn = psycopg2.connect(database= db_name, user= db_user, host= db_host, password= db_password)
-
-    cur = conn.cursor()
+    try:
+        conn = psycopg2.connect(database= db_name, user= db_user, host= db_host, password= db_password)
+        print('Database connected Successfully')
+    except Exception as e:
+        print(f'Error While connecting Database {e}')
+    
+    
 
     try:
+        cur = conn.cursor()
         for _,row in dim_coins.iterrows():
-            cur.execute("INSERT INTO dim_coin(coin_id,coin_name,coin_symbol) VALUES(%s,%s,%s)\
+            cur.execute("INSERT INTO dim_coins(coin_id,coin_name,coin_symbol) VALUES(%s,%s,%s)\
                         ON CONFLICT (coin_id) DO NOTHING",
                         (row['coin_id'],row['coin_name'],row['coin_symbol']))
         conn.commit()
