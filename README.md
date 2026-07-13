@@ -193,4 +193,25 @@ Verified end-to-end in production: ~4,640 coins successfully extracted, validate
 ## Author
 
 **Krish Chaurasia**
-[GitHub](https://github.com/Krishchaurasia05) · [LinkedIn](https://linkedin.com/in/krishchaurasia)
+
+## 👨‍💻 About Me
+
+I'm **Krish Chaurasia**, a BTech student in **Artificial Intelligence and Data Science**
+
+I build end-to-end data projects — from raw ingestion to analytical models — to develop real engineering skills beyond classroom theory. This Data Warehouse project represents my deepest technical work to date: a full production-style pipeline covering architecture, ETL, data modeling, quality testing, and documentation.
+
+I'm actively looking for **Data Analyst / Data Engineering internships** where I can contribute to real data problems.
+
+---
+
+## 🔗 Connect With Me
+
+<div align="center">
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Krish%20Chaurasia-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/krishchaurasia)
+[![GitHub](https://img.shields.io/badge/GitHub-Krishchaurasia05-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Krishchaurasia05)
+[![Email](https://img.shields.io/badge/Email-chaurasiakrish104%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:krishchaurasia244@gmail.com)
+
+</div>
+
+---
