@@ -210,7 +210,7 @@ I'm actively looking for **Data Analyst / Data Engineering internships** where I
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Krish%20Chaurasia-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/krishchaurasia)
 [![GitHub](https://img.shields.io/badge/GitHub-Krishchaurasia05-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Krishchaurasia05)
-[![Email](https://img.shields.io/badge/Email-chaurasiakrish10%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:krishchaurasia244@gmail.com)
+[![Email](https://img.shields.io/badge/Email-chaurasiakrish10%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:chaurasiakrish10@gmail.com)
 
 </div>
 
