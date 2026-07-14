@@ -198,7 +198,7 @@ Verified end-to-end in production: ~4,640 coins successfully extracted, validate
 
 I'm **Krish Chaurasia**, a BTech student in **Artificial Intelligence and Data Science**
 
-I build end-to-end data projects — from raw ingestion to analytical models — to develop real engineering skills beyond classroom theory. This Data Warehouse project represents my deepest technical work to date: a full production-style pipeline covering architecture, ETL, data modeling, quality testing, and documentation.
+I build end-to-end data projects — from raw ingestion to analytical models — to develop real engineering skills beyond classroom theory. This Crypto-etl-pipeline project represents my deepest technical work to date: a full production-style automated pipeline covering architecture, ETL, data modeling, quality testing, and documentation.
 
 I'm actively looking for **Data Analyst / Data Engineering internships** where I can contribute to real data problems.
 
